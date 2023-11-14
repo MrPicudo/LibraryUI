@@ -11,7 +11,7 @@ struct TabViewContainer: View {
                 }
             ComponentsView()
                 .tabItem {
-                    Label("Configuration", systemImage: "globe")
+                    Label("Configuration", systemImage: "gear")
                 }
         }
     }
