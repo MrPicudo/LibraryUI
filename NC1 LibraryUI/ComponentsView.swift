@@ -3,18 +3,25 @@
 import SwiftUI
 
 struct ComponentsView: View {
+    
+    @State var searchText: String = ""
+    
     var body: some View {
         VStack(spacing: 0) {
+            NavigationStack {
             // Barra de título
             TitleBarView()
                 .frame(height: 100)
-            // Área de contenido desplazable
-            ScrollView {
-                // Contenido de la ScrollView
-                ForEach(0...100, id: \.self) { index in
-                    Text("Elemento \(index)")
-                        .padding()
+            // Iniciamos el Navigation Stack
+            
+                // Área de contenido desplazable
+                List {
+                    // Contenido de la ScrollView
+                    ForEach(0...13, id: \.self) { index in
+                        NavigationLink("Texto \(index)", destination: ButtonsView())
+                    }
                 }
+                .searchable(text: $searchText)
             }
         }
         .padding(.horizontal)

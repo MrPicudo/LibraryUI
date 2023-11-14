@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		437E918C2B0421F600BDC92C /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E918B2B0421F600BDC92C /* ButtonsView.swift */; };
 		B3D322372B037805002990B0 /* NC1_LibraryUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D322362B037805002990B0 /* NC1_LibraryUIApp.swift */; };
 		B3D322392B037805002990B0 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D322382B037805002990B0 /* ComponentsView.swift */; };
 		B3D3223B2B037806002990B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D3223A2B037806002990B0 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		437E918B2B0421F600BDC92C /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		B3D322332B037805002990B0 /* NC1 LibraryUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NC1 LibraryUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D322362B037805002990B0 /* NC1_LibraryUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC1_LibraryUIApp.swift; sourceTree = "<group>"; };
 		B3D322382B037805002990B0 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				B3D322382B037805002990B0 /* ComponentsView.swift */,
 				B3D3223A2B037806002990B0 /* Assets.xcassets */,
 				B3D3223C2B037806002990B0 /* Preview Content */,
+				437E918B2B0421F600BDC92C /* ButtonsView.swift */,
 			);
 			path = "NC1 LibraryUI";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				B3D322452B038960002990B0 /* TabViewContainer.swift in Sources */,
 				B3D322392B037805002990B0 /* ComponentsView.swift in Sources */,
+				437E918C2B0421F600BDC92C /* ButtonsView.swift in Sources */,
 				B3D322372B037805002990B0 /* NC1_LibraryUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
