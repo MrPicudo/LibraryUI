@@ -8,6 +8,7 @@ struct ButtonsView: View {
         Image(systemName: "arrowshape.up.circle.fill")
             .resizable()
             .frame(width: 100, height: 100)
+            .foregroundColor(.purple)
     }
 }
 
