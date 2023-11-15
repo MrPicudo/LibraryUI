@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		437E918C2B0421F600BDC92C /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E918B2B0421F600BDC92C /* ButtonsView.swift */; };
+		43F5D56D2B04AD03003D2745 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5D56C2B04AD03003D2745 /* ListItemView.swift */; };
 		B3D322372B037805002990B0 /* NC1_LibraryUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D322362B037805002990B0 /* NC1_LibraryUIApp.swift */; };
 		B3D322392B037805002990B0 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D322382B037805002990B0 /* ComponentsView.swift */; };
 		B3D3223B2B037806002990B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D3223A2B037806002990B0 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		437E918B2B0421F600BDC92C /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		43F5D56C2B04AD03003D2745 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		B3D322332B037805002990B0 /* NC1 LibraryUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NC1 LibraryUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D322362B037805002990B0 /* NC1_LibraryUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC1_LibraryUIApp.swift; sourceTree = "<group>"; };
 		B3D322382B037805002990B0 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				B3D3223A2B037806002990B0 /* Assets.xcassets */,
 				B3D3223C2B037806002990B0 /* Preview Content */,
 				437E918B2B0421F600BDC92C /* ButtonsView.swift */,
+				43F5D56C2B04AD03003D2745 /* ListItemView.swift */,
 			);
 			path = "NC1 LibraryUI";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				B3D322392B037805002990B0 /* ComponentsView.swift in Sources */,
 				437E918C2B0421F600BDC92C /* ButtonsView.swift in Sources */,
 				B3D322372B037805002990B0 /* NC1_LibraryUIApp.swift in Sources */,
+				43F5D56D2B04AD03003D2745 /* ListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +284,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1 LibraryUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 84TTD6VG5A;
+				DEVELOPMENT_TEAM = WTLRY9GBMJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -293,7 +297,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mtorres23.NC1-LibraryUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "mtorres.NC1-LibraryUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -309,7 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1 LibraryUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 84TTD6VG5A;
+				DEVELOPMENT_TEAM = WTLRY9GBMJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -322,7 +326,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mtorres23.NC1-LibraryUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "mtorres.NC1-LibraryUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

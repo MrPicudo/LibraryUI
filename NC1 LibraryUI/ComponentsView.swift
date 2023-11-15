@@ -7,18 +7,19 @@ struct ComponentsView: View {
     @State var searchText: String = ""
     
     var body: some View {
-        VStack(spacing: 0) {
-            NavigationStack {
-            // Barra de título
-            TitleBarView()
-                .frame(height: 100)
+        VStack {
             // Iniciamos el Navigation Stack
-            
+            NavigationStack {
+                // Barra de título
+                TitleBarView()
+                    .frame(height: 80)
                 // Área de contenido desplazable
                 List {
                     // Contenido de la ScrollView
                     ForEach(0...13, id: \.self) { index in
-                        NavigationLink("Texto \(index)", destination: ButtonsView())
+                        NavigationLink(destination: ButtonsView()) {
+                            ListItemView(sfsymbol: "globe", component: "Buttons")
+                        }
                     }
                 }
                 .searchable(text: $searchText)
