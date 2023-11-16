@@ -18,10 +18,11 @@ struct ComponentsView: View {
                         // Barra de título
                         TitleBarView()
                             .frame(height: 80)
+                        
                         // Agregamos un contenedor para el cuadro de búsqueda
                         ZStack {
                             Color(.systemGray6)
-                            TextField("Search Componentes", text: $searchText)
+                            TextField("Search Components", text: $searchText)
                                 .padding(7)
                                 .background(Color(.systemGray5))
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -29,17 +30,38 @@ struct ComponentsView: View {
                         }
                         .frame(height: 38)
                         .padding(.top, -50)
+                        
                         // Área de contenido desplazable
                         List {
-                            // Contenido de la ScrollView
-                            Section(header: Text("CONTROLS").font(.headline)) {
-                                ForEach (components.data) { component in
-                                    NavigationLink(destination: ButtonsView()) {
-                                        ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
+                            Group {
+                                // Contenido de la primera sección
+                                Section(header: Text("CONTROLS").font(.headline)) {
+                                    ForEach (components.controlsData) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
+                                        }
+                                    }
+                                }
+                                // Contenido de la segunda sección
+                                Section(header: Text("LAYOUTS").font(.headline)) {
+                                    ForEach (components.layoutsData) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
+                                        }
+                                    }
+                                }
+                                // Contenido de la tercera sección
+                                Section(header: Text("MISCELLANEOUS").font(.headline)) {
+                                    ForEach (components.miscellaneousData) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
+                                        }
                                     }
                                 }
                             }
+                            
                         }
+                                            
                     }
                 }
             }
