@@ -27,106 +27,111 @@ struct ComponentsView: View {
         ZStack {
             Color(.systemGray6)
                 .ignoresSafeArea(.all)
-            VStack(spacing:0) {
-                // Iniciamos el Navigation Stack
-                NavigationStack {
-                    VStack(spacing: 0) {
-                        // Barra de título
-                        TitleBarView()
-                            .frame(height: 80)
+            // Iniciamos el Navigation Stack
+            NavigationStack {
+                VStack(spacing: 0) {
+                    // Barra de título
+                    TitleBarView()
+                        .frame(height: 50)
+                    // Agregamos un contenedor para el cuadro de búsqueda
+                    ZStack {
+                        Color(.systemGray6)
+                        TextField("Search Components", text: $searchText)
+                            .padding(7)
+                            .background(Color(.systemGray5))
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .padding(.horizontal)
+                    }
+                    .frame(height: 38)
+                    .padding(.top, -10)
+                    // Área de contenido desplazable
+                    List {
+                        /* Intento de barra de búsqueda como en la app original.
+                         TextField("Search Components", text: $searchText)
+                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)) // Elimina el padding predeterminado
+                         .background(Color(.systemGray5))
+                         .clipShape(RoundedRectangle(cornerRadius: 8))
+                         */
                         
-                        // Agregamos un contenedor para el cuadro de búsqueda
-                        ZStack {
-                            Color(.systemGray6)
-                            TextField("Search Components", text: $searchText)
-                                .padding(7)
-                                .background(Color(.systemGray5))
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
-                                .padding(.horizontal)
-                        }
-                        .frame(height: 38)
-                        .padding(.top, -50)
-                        
-                        // Área de contenido desplazable
-                        List {
-                            
-                            if !searchText.isEmpty {
-                                // Sección de CONTROLS
-                                if !filteredControls.isEmpty {
-                                    Section(header: Text("CONTROLS").font(.headline)) {
-                                        ForEach(filteredControls) { component in
-                                            NavigationLink(destination: ButtonsView()) {
-                                                ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
-                                            }
+                        if !searchText.isEmpty {
+                            // Sección de CONTROLS
+                            if !filteredControls.isEmpty {
+                                Section(header: Text("CONTROLS").font(.subheadline)) {
+                                    ForEach(filteredControls) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
                                         }
-                                    }
-                                } else {
-                                    Section(header: Text("CONTROLS").font(.headline)) {
-                                        Text("No results found")
-                                    }
-                                }
-                                
-                                // Sección de LAYOUTS
-                                if !filteredLayouts.isEmpty {
-                                    Section(header: Text("LAYOUTS").font(.headline)) {
-                                        ForEach(filteredLayouts) { component in
-                                            NavigationLink(destination: ButtonsView()) {
-                                                ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
-                                            }
-                                        }
-                                    }
-                                } else {
-                                    Section(header: Text("LAYOUTS").font(.headline)) {
-                                        Text("No results found")
-                                    }
-                                }
-                                
-                                // Sección de MISCELLANEOUS
-                                if !filteredMiscellaneous.isEmpty {
-                                    Section(header: Text("MISCELLANEOUS").font(.headline)) {
-                                        ForEach(filteredMiscellaneous) { component in
-                                            NavigationLink(destination: ButtonsView()) {
-                                                ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
-                                            }
-                                        }
-                                    }
-                                } else {
-                                    Section(header: Text("MISCELLANEOUS").font(.headline)) {
-                                        Text("No results found")
                                     }
                                 }
                             } else {
-                                Group {
-                                    // Contenido de la primera sección
-                                    Section(header: Text("CONTROLS").font(.headline)) {
-                                        ForEach (components.controlsData) { component in
-                                            NavigationLink(destination: ButtonsView()) {
-                                                ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
-                                            }
-                                        }
-                                    }
-                                    // Contenido de la segunda sección
-                                    Section(header: Text("LAYOUTS").font(.headline)) {
-                                        ForEach (components.layoutsData) { component in
-                                            NavigationLink(destination: ButtonsView()) {
-                                                ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
-                                            }
-                                        }
-                                    }
-                                    // Contenido de la tercera sección
-                                    Section(header: Text("MISCELLANEOUS").font(.headline)) {
-                                        ForEach (components.miscellaneousData) { component in
-                                            NavigationLink(destination: ButtonsView()) {
-                                                ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
-                                            }
+                                Section(header: Text("CONTROLS").font(.subheadline)) {
+                                    Text("No results found")
+                                }
+                            }
+                            
+                            // Sección de LAYOUTS
+                            if !filteredLayouts.isEmpty {
+                                Section(header: Text("LAYOUTS").font(.subheadline)) {
+                                    ForEach(filteredLayouts) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
                                         }
                                     }
                                 }
-                                
-                                
+                            } else {
+                                Section(header: Text("LAYOUTS").font(.subheadline)) {
+                                    Text("No results found")
+                                }
                             }
+                            
+                            // Sección de MISCELLANEOUS
+                            if !filteredMiscellaneous.isEmpty {
+                                Section(header: Text("MISCELLANEOUS").font(.subheadline)) {
+                                    ForEach(filteredMiscellaneous) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
+                                        }
+                                    }
+                                }
+                            } else {
+                                Section(header: Text("MISCELLANEOUS").font(.subheadline)) {
+                                    Text("No results found")
+                                }
+                            }
+                        } else {
+                            Group {
+                                // Contenido de la primera sección
+                                Section(header: Text("CONTROLS").font(.subheadline)) {
+                                    ForEach (components.controlsData) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
+                                        }
+                                    }
+                                }
+                                // Contenido de la segunda sección
+                                Section(header: Text("LAYOUTS").font(.subheadline)) {
+                                    ForEach (components.layoutsData) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
+                                        }
+                                    }
+                                }
+                                // Contenido de la tercera sección
+                                Section(header: Text("MISCELLANEOUS").font(.subheadline)) {
+                                    ForEach (components.miscellaneousData) { component in
+                                        NavigationLink(destination: ButtonsView()) {
+                                            ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            
                         }
                     }
+                    .padding(.top, 0)
+                    
+                    
                 }
             }
         }
@@ -152,7 +157,8 @@ struct TitleBarView: View {
                         }) {
                             Image(systemName: "line.3.horizontal.decrease.circle")
                                 .resizable()
-                                .frame(width: 25, height: 25)
+                                .frame(width: 24, height: 24)
+                                .fontWeight(.light)
                                 .foregroundColor(.teal)
                         }
                         .padding()
