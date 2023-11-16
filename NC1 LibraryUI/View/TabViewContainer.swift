@@ -1,18 +1,20 @@
-/* TabViewContainer.swift --> NC1 LibraryUI. Created by Jose Miguel Torres Chavez Nava on 14/11/23. */
+/* TabViewContainer.swift --> NC1 LibraryUI. Created by José Miguel Torres Chávez Nava on 14/11/23. */
 
 import SwiftUI
 
 struct TabViewContainer: View {
     var body: some View {
-        TabView {
-            ComponentsView()
-                .tabItem {
-                    Label("Components", systemImage: "curlybraces.square")
-                }
-            ComponentsView()
-                .tabItem {
-                    Label("Configuration", systemImage: "gear")
-                }
+        ZStack {
+            TabView {
+                ComponentsView()
+                    .tabItem {
+                        Label("Components", systemImage: "curlybraces.square")
+                    }
+                ConfigurationView()
+                    .tabItem {
+                        Label("Configuration", systemImage: "gear")
+                    }
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-/* ButtonsView.swift --> NC1 LibraryUI. Created by Miguel Torres on 14/11/23. */
+/* ButtonsView.swift --> NC1 LibraryUI. Created by José Miguel Torres Chávez Nava on 14/11/23. */
 
 import SwiftUI
 

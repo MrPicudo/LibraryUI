@@ -1,4 +1,4 @@
-/* NC1_LibraryUIApp.swift --> NC1 LibraryUI. Created by Jose Miguel Torres Chavez Nava on 14/11/23. */
+/* NC1_LibraryUIApp.swift --> NC1 LibraryUI. Created by José Miguel Torres Chávez Nava on 14/11/23. */
 
 import SwiftUI
 

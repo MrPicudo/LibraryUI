@@ -1,4 +1,4 @@
-/* ComponentsModel.swift --> NC1 LibraryUI. Created by Jose Miguel Torres Chavez Nava on 15/11/23. */
+/* ComponentsModel.swift --> NC1 LibraryUI. Created by José Miguel Torres Chávez Nava on 15/11/23. */
 
 import Foundation
 import SwiftUI

@@ -1,4 +1,4 @@
-/* ListItemView.swift --> NC1 LibraryUI. Created by Jose Miguel Torres Chavez Nava on 14/11/23. */
+/* ListItemView.swift --> NC1 LibraryUI. Created by José Miguel Torres Chávez Nava on 14/11/23. */
 
 import SwiftUI
 
@@ -9,7 +9,6 @@ struct ListItemView: View {
     let color: Color
     
     var body: some View {
-        
         HStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
@@ -26,7 +25,6 @@ struct ListItemView: View {
                 .padding(.leading, 7)
             Spacer()
         }
-        
     }
 }
 

@@ -1,8 +1,9 @@
-/* ContentView.swift --> NC1 LibraryUI. Created by Jose Miguel Torres Chavez Nava on 14/11/23. */
+/* ContentView.swift --> NC1 LibraryUI. Created by José Miguel Torres Chávez Nava on 14/11/23. */
 
 import SwiftUI
 
 struct ComponentsView: View {
+    
     // Objeto que nos da acceso a los datos del modelo.
     var components = ComponentsData()
     // Objetos necesarios para realizar la búsqueda.
@@ -22,6 +23,7 @@ struct ComponentsView: View {
             $0.name.localizedCaseInsensitiveContains(searchText) || searchText.isEmpty
         }
     }
+    
     // Iniciamos la variable que construye la vista
     var body: some View {
         ZStack {
@@ -37,9 +39,18 @@ struct ComponentsView: View {
                     ZStack {
                         Color(.systemGray6)
                         TextField("Search Components", text: $searchText)
-                            .padding(7)
+                            .padding(.leading, 30) // Espacio para el símbolo
+                            .padding(7) // Para evitar que la altura del cuadro de búsqueda sea muy pequeño.
                             .background(Color(.systemGray5))
                             .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .overlay( // Agregamos el símbolo dentro del cuadro de búsqueda
+                                HStack {
+                                    Image(systemName: "magnifyingglass")
+                                        .foregroundColor(.gray)
+                                        .padding(.leading, 8) // Ajusta la posición del símbolo
+                                    Spacer()
+                                }
+                            )
                             .padding(.horizontal)
                     }
                     .frame(height: 38)
@@ -68,7 +79,6 @@ struct ComponentsView: View {
                                     Text("No results found")
                                 }
                             }
-                            
                             // Sección de LAYOUTS
                             if !filteredLayouts.isEmpty {
                                 Section(header: Text("LAYOUTS").font(.subheadline)) {
@@ -83,7 +93,6 @@ struct ComponentsView: View {
                                     Text("No results found")
                                 }
                             }
-                            
                             // Sección de MISCELLANEOUS
                             if !filteredMiscellaneous.isEmpty {
                                 Section(header: Text("MISCELLANEOUS").font(.subheadline)) {
@@ -125,13 +134,8 @@ struct ComponentsView: View {
                                     }
                                 }
                             }
-                            
-                            
                         }
                     }
-                    .padding(.top, 0)
-                    
-                    
                 }
             }
         }
@@ -142,7 +146,7 @@ struct ComponentsView: View {
 struct TitleBarView: View {
     var body: some View {
         ZStack {
-            Color(red: 242/255, green: 242/255, blue: 247/255)
+            Color(.systemGray6)
                 .ignoresSafeArea(.all)
             GeometryReader { geometry in
                 HStack {
