@@ -14,6 +14,7 @@ struct TitleBarView: View {
                         Text("Controls")
                             .font(.title3)
                             .fontWeight(.semibold)
+                            .foregroundStyle(Color.indigo)
                             .frame(width: geometry.size.width, alignment: .center)
                             .padding(.top, -10)
                         Button(action: {
@@ -23,7 +24,7 @@ struct TitleBarView: View {
                                 .resizable()
                                 .frame(width: 24, height: 24)
                                 .fontWeight(.light)
-                                .foregroundColor(.teal)
+                                .foregroundColor(.indigo)
                         }
                         .padding()
                     }
