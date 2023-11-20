@@ -5,10 +5,14 @@ import SwiftUI
 struct ComponentsView: View {
     // Objeto que nos da acceso a los datos del modelo.
     var components = ComponentsData()
-    // Objetos necesarios para realizar la búsqueda.
+    // Cadena que almacena la búsqueda que realiza el usuario
     @State var searchText: String = ""
+    
+    /* Usamos computed properties para obtener los arreglos resultantes de las búsquedas. */
     var filteredControls: [ComponentsModel] {
+        // Accedemos al arreglo "controlsData" del objeto "components", para usar la función "filter" que tienen todos los arreglos.
         components.controlsData.filter {
+            // $0 representa a cada elemento del arreglo "controlsData" que sera revisado por la función filter, para ver si la cadena contenida en "searchText" coincide con el atributo "name" de cualquiera de los objetos del arreglo. En caso de que "searchText" esté vacío, el closure retorna "true" y eso significa que filter debe de incluir a todos los elementos de controlsData. Aquí lo que hacemos es decir en qué ocasiones debemos agregar un objeto al arreglo "controlsData"
             $0.name.localizedCaseInsensitiveContains(searchText) || searchText.isEmpty
         }
     }
@@ -38,6 +42,7 @@ struct ComponentsView: View {
                 .padding(.top, -10)
                 // Área de contenido desplazable
                 List {
+                    /* Primero definimos qué pasa en la vista si el cuadro de búsqueda NO está vacío. */
                     if !searchText.isEmpty {
                         // Sección de CONTROLS
                         if !filteredControls.isEmpty {
@@ -50,7 +55,10 @@ struct ComponentsView: View {
                             }
                         } else {
                             Section(header: Text("CONTROLS").font(.subheadline)) {
-                                Text("No results found")
+                                Text("There are no Controls that match ") +
+                                Text("\(searchText)")
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.blue)
                             }
                         }
                         // Sección de LAYOUTS
@@ -64,7 +72,10 @@ struct ComponentsView: View {
                             }
                         } else {
                             Section(header: Text("LAYOUTS").font(.subheadline)) {
-                                Text("No results found")
+                                Text("There are no Layouts Views that match ") +
+                                Text("\(searchText)")
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.blue)
                             }
                         }
                         // Sección de MISCELLANEOUS
@@ -78,10 +89,13 @@ struct ComponentsView: View {
                             }
                         } else {
                             Section(header: Text("MISCELLANEOUS").font(.subheadline)) {
-                                Text("No results found")
+                                Text("There are no Miscellaneous Views that match ") +
+                                Text("\(searchText)")
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.blue)
                             }
                         }
-                    } else {
+                    } else { /* Ahora definimos qué pasa si el cuadro de búsqueda SI está vacío. */
                         Group {
                             // Contenido de la primera sección
                             Section(header: Text("CONTROLS").font(.subheadline)) {
