@@ -46,7 +46,7 @@ struct ComponentsView: View {
                     if !searchText.isEmpty {
                         // Sección de CONTROLS
                         if !filteredControls.isEmpty {
-                            Section(header: Text("CONTROLS").font(.subheadline)) {
+                            Section(header: Text("CONTROLS").font(.subheadline).accessibilityLabel("\(filteredControls.count) \(filteredControls.count == 1 ? "result" : "results") from controls list")) {
                                 ForEach(filteredControls) { component in
                                     NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
@@ -54,16 +54,20 @@ struct ComponentsView: View {
                                 }
                             }
                         } else {
-                            Section(header: Text("CONTROLS").font(.subheadline)) {
-                                Text("There are no Controls that match ") +
-                                Text("\(searchText)")
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(.blue)
+                            Section(header: Text("CONTROLS").font(.subheadline).accessibilityLabel("No results from controls list")) {
+                                Group {
+                                    Text("There are no Controls that match ") +
+                                    Text("\(searchText)")
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(.blue)
+                                }
+                                .accessibilityElement(children: .combine) // Consideramos los elementos del Group como un único elemento de accesibilidad.
+                                .accessibilityHidden(true) // Ignoramos el texto que ya mencionamos en el Heading.
                             }
                         }
                         // Sección de LAYOUTS
                         if !filteredLayouts.isEmpty {
-                            Section(header: Text("LAYOUTS").font(.subheadline)) {
+                            Section(header: Text("LAYOUTS").font(.subheadline).accessibilityLabel("\(filteredLayouts.count) \(filteredLayouts.count == 1 ? "result" : "results") from layouts list")) {
                                 ForEach(filteredLayouts) { component in
                                     NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
@@ -71,16 +75,20 @@ struct ComponentsView: View {
                                 }
                             }
                         } else {
-                            Section(header: Text("LAYOUTS").font(.subheadline)) {
-                                Text("There are no Layouts Views that match ") +
-                                Text("\(searchText)")
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(.blue)
+                            Section(header: Text("LAYOUTS").font(.subheadline).accessibilityLabel("No results from layouts list")) {
+                                Group {
+                                    Text("There are no Layouts Views that match ") +
+                                    Text("\(searchText)")
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(.blue)
+                                }
+                                .accessibilityElement(children: .combine) // Consideramos los elementos del Group como un único elemento de accesibilidad.
+                                .accessibilityHidden(true) // Ignoramos el texto que ya mencionamos en el Heading.
                             }
                         }
                         // Sección de MISCELLANEOUS
                         if !filteredMiscellaneous.isEmpty {
-                            Section(header: Text("MISCELLANEOUS").font(.subheadline)) {
+                            Section(header: Text("MISCELLANEOUS").font(.subheadline).accessibilityLabel("\(filteredMiscellaneous.count) \(filteredMiscellaneous.count == 1 ? "result" : "results") from layouts list")) {
                                 ForEach(filteredMiscellaneous) { component in
                                     NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
@@ -88,17 +96,21 @@ struct ComponentsView: View {
                                 }
                             }
                         } else {
-                            Section(header: Text("MISCELLANEOUS").font(.subheadline)) {
-                                Text("There are no Miscellaneous Views that match ") +
-                                Text("\(searchText)")
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(.blue)
+                            Section(header: Text("MISCELLANEOUS").font(.subheadline).accessibilityLabel("No results from miscellaneous list")) {
+                                Group {
+                                    Text("There are no Miscellaneous Views that match ") +
+                                    Text("\(searchText)")
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(.blue)
+                                }
+                                .accessibilityElement(children: .combine) // Consideramos los elementos del Group como un único elemento de accesibilidad.
+                                .accessibilityHidden(true) // Ignoramos el texto que ya mencionamos en el Heading.
                             }
                         }
                     } else { /* Ahora definimos qué pasa si el cuadro de búsqueda SI está vacío. */
                         Group {
                             // Contenido de la primera sección
-                            Section(header: Text("CONTROLS").font(.subheadline)) {
+                            Section(header: Text("CONTROLS").font(.subheadline).accessibilityLabel("Controls list with currently \(components.controlsData.count) elements.")) {
                                 ForEach (components.controlsData) { component in
                                     NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
@@ -106,7 +118,7 @@ struct ComponentsView: View {
                                 }
                             }
                             // Contenido de la segunda sección
-                            Section(header: Text("LAYOUTS").font(.subheadline)) {
+                            Section(header: Text("LAYOUTS").font(.subheadline).accessibilityLabel("Layouts list with currently \(components.layoutsData.count) elements.")) {
                                 ForEach (components.layoutsData) { component in
                                     NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
@@ -114,7 +126,7 @@ struct ComponentsView: View {
                                 }
                             }
                             // Contenido de la tercera sección
-                            Section(header: Text("MISCELLANEOUS").font(.subheadline)) {
+                            Section(header: Text("MISCELLANEOUS").font(.subheadline).accessibilityLabel("Miscellaneous list with currently \(components.miscellaneousData.count) elements")) {
                                 ForEach (components.miscellaneousData) { component in
                                     NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)

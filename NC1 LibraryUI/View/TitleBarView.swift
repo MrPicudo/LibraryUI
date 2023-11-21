@@ -2,7 +2,7 @@
 
 import SwiftUI
 
-/// Se encarga de mostrar un texto de título centrado perfectamente, en conjunto con un botón que se mantiene alineado a la derecha.
+/// Se encarga de mostrar un texto de título centrado perfectamente, en conjunto con un botón que se mantiene alineado a la derecha. Usbakistan
 struct TitleBarView: View {
     var body: some View {
         ZStack {
@@ -17,6 +17,8 @@ struct TitleBarView: View {
                             .foregroundStyle(Color.blue)
                             .frame(width: geometry.size.width, alignment: .center)
                             .padding(.top, -10)
+                            .accessibilityLabel("Controls View.")
+                            .accessibilitySortPriority(2.0)
                         Button(action: {
                             // Acción del botón
                         }) {
@@ -27,6 +29,9 @@ struct TitleBarView: View {
                                 .foregroundColor(.blue)
                         }
                         .padding()
+                        .accessibilityLabel("Filter by iOS version.")
+                        .accessibilityHint("Choose the iOS version to see the related components.")
+                        .accessibilitySortPriority(1.0)
                     }
                 }
             }
