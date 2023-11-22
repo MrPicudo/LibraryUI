@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		437E918C2B0421F600BDC92C /* StaticViewInScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E918B2B0421F600BDC92C /* StaticViewInScroll.swift */; };
 		43F5D56D2B04AD03003D2745 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5D56C2B04AD03003D2745 /* ListItemView.swift */; };
 		43F5D5702B06A494003D2745 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5D56F2B06A494003D2745 /* ConfigurationView.swift */; };
 		43F5D5722B06AB35003D2745 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5D5712B06AB35003D2745 /* SettingsItemView.swift */; };
@@ -26,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		437E918B2B0421F600BDC92C /* StaticViewInScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticViewInScroll.swift; sourceTree = "<group>"; };
 		43F5D56C2B04AD03003D2745 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		43F5D56F2B06A494003D2745 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		43F5D5712B06AB35003D2745 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 		B37240C32B0DFECC006AC267 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				437E918B2B0421F600BDC92C /* StaticViewInScroll.swift */,
 				B37240C42B0DFF37006AC267 /* Sheets.swift */,
 				B37240C62B0E0B2D006AC267 /* DisclosureView.swift */,
 			);
@@ -218,7 +215,6 @@
 				B3D6D0EE2B04CEBF004B2E1D /* ComponentsData.swift in Sources */,
 				B3D322392B037805002990B0 /* ComponentsView.swift in Sources */,
 				B37240C92B0E1462006AC267 /* ButtonsView.swift in Sources */,
-				437E918C2B0421F600BDC92C /* StaticViewInScroll.swift in Sources */,
 				B3D322372B037805002990B0 /* NC1_LibraryUIApp.swift in Sources */,
 				B39B80532B076C57001006EB /* TitleBarView.swift in Sources */,
 				B37240C52B0DFF37006AC267 /* Sheets.swift in Sources */,
@@ -360,7 +356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1 LibraryUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 84TTD6VG5A;
+				DEVELOPMENT_TEAM = WTLRY9GBMJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -373,7 +369,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mtorres23.NC1-LibraryUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "mtorres.NC1-LibraryUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -389,7 +385,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1 LibraryUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 84TTD6VG5A;
+				DEVELOPMENT_TEAM = WTLRY9GBMJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -402,7 +398,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mtorres23.NC1-LibraryUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "mtorres.NC1-LibraryUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

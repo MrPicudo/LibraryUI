@@ -69,7 +69,7 @@ struct ComponentsView: View {
                         if !filteredLayouts.isEmpty {
                             Section(header: Text("LAYOUTS").font(.subheadline).accessibilityLabel("\(filteredLayouts.count) \(filteredLayouts.count == 1 ? "result" : "results") from layouts list")) {
                                 ForEach(filteredLayouts) { component in
-                                    NavigationLink(destination: StaticViewInScroll()) {
+                                    NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
                                     }
                                 }
@@ -90,7 +90,7 @@ struct ComponentsView: View {
                         if !filteredMiscellaneous.isEmpty {
                             Section(header: Text("MISCELLANEOUS").font(.subheadline).accessibilityLabel("\(filteredMiscellaneous.count) \(filteredMiscellaneous.count == 1 ? "result" : "results") from layouts list")) {
                                 ForEach(filteredMiscellaneous) { component in
-                                    NavigationLink(destination: StaticViewInScroll()) {
+                                    NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
                                     }
                                 }
@@ -120,7 +120,7 @@ struct ComponentsView: View {
                             // Contenido de la segunda sección
                             Section(header: Text("LAYOUTS").font(.subheadline).accessibilityLabel("Layouts list with currently \(components.layoutsData.count) elements.")) {
                                 ForEach (components.layoutsData) { component in
-                                    NavigationLink(destination: StaticViewInScroll()) {
+                                    NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
                                     }
                                 }
@@ -128,7 +128,7 @@ struct ComponentsView: View {
                             // Contenido de la tercera sección
                             Section(header: Text("MISCELLANEOUS").font(.subheadline).accessibilityLabel("Miscellaneous list with currently \(components.miscellaneousData.count) elements")) {
                                 ForEach (components.miscellaneousData) { component in
-                                    NavigationLink(destination: StaticViewInScroll()) {
+                                    NavigationLink(destination: ButtonsView()) {
                                         ListItemView(sfsymbol: component.image, component: component.name, color: component.color)
                                     }
                                 }

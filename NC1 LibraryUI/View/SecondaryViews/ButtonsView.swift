@@ -11,62 +11,96 @@ struct ButtonsView: View {
     var body: some View {
         
         ZStack(alignment: .top) {
-            
-            GeometryReader { geometry in
-                
-                VStack {
-                    List{
-                        Picker("Button Role", selection: $selectedRole) {
-                            Text("None").tag(Role.none)
-                            Text("Destructive").tag(Role.destructive)
+            Color(.systemBackground)
+                .ignoresSafeArea(.all)
+            VStack {
+                ScrollView {
+                    Color(.systemBackground)
+                    
+                    VStack(spacing: 0) {
+                        HStack {
+                            Text("Button Role")
+                            Spacer()
+                            Picker("Button Role", selection: $selectedRole) {
+                                Text("None").tag(Role.none)
+                                Text("Destructive").tag(Role.destructive)
+                            }
                         }
-                        Picker("Button Size", selection: $selectedSize) {
-                            Text("Large").tag(Size.large)
-                            Text("Regular").tag(Size.regular)
-                            Text("Small").tag(Size.small)
-                            Text("Mini").tag(Size.mini)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal)
+                        .background(Color(UIColor.systemGray6)) // Fondo de la celda
+                        
+                        Divider()
+                            .padding(.leading, 15)
+                        
+                        HStack {
+                            Text("Button Size")
+                            Spacer()
+                            Picker("Button Size", selection: $selectedSize) {
+                                Text("Large").tag(Size.large)
+                                Text("Regular").tag(Size.regular)
+                                Text("Small").tag(Size.small)
+                                Text("Mini").tag(Size.mini)
+                            }
                         }
+                        .padding(.vertical, 10)
+                        .padding(.horizontal)
+                        .background(Color(UIColor.systemGray6)) // Fondo de la celda
                     }
-                    .frame(height: 150)
+                    .cornerRadius(8) // Esquinas redondeadas
+                    .padding() // Padding para el VStack
                     
-                    Button(){
-                        //
-                    } label: {
-                        Text("Standard Button")
-                    }.controlSize(.regular)
-
-                    Button(){
-                        //
-                    } label: {
-                        Text("Plain Button")
-                    }.buttonStyle(.plain)
-                    .controlSize(.regular)
-
-                    Button(){
-                        //
-                    } label: {
-                        Text("Bordered")
-                    }.buttonStyle(.bordered)
-                    .controlSize(.regular)
-
-                    Button(){
-                        //
-                    } label: {
-                        Text("Prominent Border")
-                    }.buttonStyle(.borderedProminent)
-                    .controlSize(.regular)
-                    
-                    Spacer()
-                    
-                    DisclosureGroup("Mostrar imagen", isExpanded: $isExpanded) {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200)
+                    VStack(spacing: 13) {
+                        Button(){
+                            //
+                        } label: {
+                            Text("Standard Button")
+                        }.controlSize(.regular)
+                        
+                        Button(){
+                            //
+                        } label: {
+                            Text("Plain Button")
+                        }.buttonStyle(.plain)
+                            .controlSize(.regular)
+                        
+                        Button(){
+                            //
+                        } label: {
+                            Text("Bordered")
+                        }.buttonStyle(.bordered)
+                            .controlSize(.regular)
+                        
+                        Button(){
+                            //
+                        } label: {
+                            Text("Prominent Border")
+                        }.buttonStyle(.borderedProminent)
+                            .controlSize(.regular)
+                        
                     }
-                    .padding()
                 }
+                Spacer()
+                DisclosureGroup(isExpanded: $isExpanded) {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                } label: {
+                    HStack {
+                        Text("{ Code }")
+                            .foregroundStyle(.black)
+                            .font(.title2)
+                            .fontWeight(.medium)
+                        Spacer()
+                    }
+                    .frame(height: 75)
+                    .padding(.horizontal)
+                    .background(.teal.opacity(0.40))
+                }
+                .padding(.horizontal)
             }
+            .frame(maxHeight: .infinity)
         }
         .navigationTitle("Buttons")
         .navigationBarTitleDisplayMode(.inline)
@@ -82,8 +116,6 @@ enum Size: String, CaseIterable, Identifiable {
     case large, regular, small, mini
     var id: Self { self }
 }
-
-
 
 
 #Preview {

@@ -15,15 +15,15 @@ struct ConfigurationView: View {
                     List {
                         Group {
                             Section {
-                                NavigationLink(destination: StaticViewInScroll()) {
+                                NavigationLink(destination: ButtonsView()) {
                                     SettingsItemView(sfsymbol: "eyedropper", component: "Appearance", color: Color.teal)
                                 }
                             }
                             Section {
-                                NavigationLink(destination: StaticViewInScroll()) {
+                                NavigationLink(destination: ButtonsView()) {
                                     SettingsItemView(sfsymbol: "heart", component: "Tip Jar", color: Color.teal)
                                 }
-                                NavigationLink(destination: StaticViewInScroll()) {
+                                NavigationLink(destination: ButtonsView()) {
                                     SettingsItemView(sfsymbol: "envelope.open", component: "Feedback", color: Color.teal)
                                 }
                             }
@@ -32,16 +32,16 @@ struct ConfigurationView: View {
                                 SettingsItemView(sfsymbol: "square.and.arrow.up", component: "Share App", color: Color.teal)
                             }
                             Section {
-                                NavigationLink(destination: StaticViewInScroll()) {
+                                NavigationLink(destination: ButtonsView()) {
                                     SettingsItemView(sfsymbol: "airplane.departure", component: "Onboarding", color: Color.teal)
                                 }
-                                NavigationLink(destination: StaticViewInScroll()) {
+                                NavigationLink(destination: ButtonsView()) {
                                     SettingsItemView(sfsymbol: "list.bullet.rectangle.portrait", component: "What's New", color: Color.teal)
                                 }
-                                NavigationLink(destination: StaticViewInScroll()) {
+                                NavigationLink(destination: ButtonsView()) {
                                     SettingsItemView(sfsymbol: "doc", component: "Acknowledgements", color: Color.teal)
                                 }
-                                NavigationLink(destination: StaticViewInScroll()) {
+                                NavigationLink(destination: ButtonsView()) {
                                     SettingsItemView(sfsymbol: "info.circle", component: "About", color: Color.teal)
                                 }
                             }
