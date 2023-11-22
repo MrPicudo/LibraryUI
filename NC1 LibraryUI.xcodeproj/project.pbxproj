@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		437E918C2B0421F600BDC92C /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E918B2B0421F600BDC92C /* ButtonsView.swift */; };
+		437E918C2B0421F600BDC92C /* StaticViewInScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E918B2B0421F600BDC92C /* StaticViewInScroll.swift */; };
 		43F5D56D2B04AD03003D2745 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5D56C2B04AD03003D2745 /* ListItemView.swift */; };
 		43F5D5702B06A494003D2745 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5D56F2B06A494003D2745 /* ConfigurationView.swift */; };
 		43F5D5722B06AB35003D2745 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5D5712B06AB35003D2745 /* SettingsItemView.swift */; };
+		B37240C52B0DFF37006AC267 /* Sheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37240C42B0DFF37006AC267 /* Sheets.swift */; };
+		B37240C72B0E0B2D006AC267 /* DisclosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37240C62B0E0B2D006AC267 /* DisclosureView.swift */; };
+		B37240C92B0E1462006AC267 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37240C82B0E1462006AC267 /* ButtonsView.swift */; };
 		B39B80502B076917001006EB /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39B804F2B076917001006EB /* SearchBarView.swift */; };
 		B39B80532B076C57001006EB /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39B80522B076C57001006EB /* TitleBarView.swift */; };
 		B3D322372B037805002990B0 /* NC1_LibraryUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D322362B037805002990B0 /* NC1_LibraryUIApp.swift */; };
@@ -23,10 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		437E918B2B0421F600BDC92C /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		437E918B2B0421F600BDC92C /* StaticViewInScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticViewInScroll.swift; sourceTree = "<group>"; };
 		43F5D56C2B04AD03003D2745 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		43F5D56F2B06A494003D2745 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		43F5D5712B06AB35003D2745 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
+		B37240C42B0DFF37006AC267 /* Sheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheets.swift; sourceTree = "<group>"; };
+		B37240C62B0E0B2D006AC267 /* DisclosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureView.swift; sourceTree = "<group>"; };
+		B37240C82B0E1462006AC267 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		B39B804F2B076917001006EB /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		B39B80522B076C57001006EB /* TitleBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBarView.swift; sourceTree = "<group>"; };
 		B3D322332B037805002990B0 /* NC1 LibraryUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NC1 LibraryUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +63,24 @@
 				B3D6D0EF2B04CF5E004B2E1D /* ComponentsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B37240C32B0DFECC006AC267 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				437E918B2B0421F600BDC92C /* StaticViewInScroll.swift */,
+				B37240C42B0DFF37006AC267 /* Sheets.swift */,
+				B37240C62B0E0B2D006AC267 /* DisclosureView.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		B37240CA2B0E1467006AC267 /* SecondaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				B37240C82B0E1462006AC267 /* ButtonsView.swift */,
+			);
+			path = SecondaryViews;
 			sourceTree = "<group>";
 		};
 		B39B80512B076938001006EB /* Controller */ = {
@@ -90,6 +114,7 @@
 				43F5D56E2B068E48003D2745 /* Model */,
 				B3D6D0EC2B04CE7D004B2E1D /* View */,
 				B39B80512B076938001006EB /* Controller */,
+				B37240C32B0DFECC006AC267 /* Practice */,
 				B3D3223A2B037806002990B0 /* Assets.xcassets */,
 				B3D3223C2B037806002990B0 /* Preview Content */,
 			);
@@ -113,7 +138,7 @@
 				B39B80522B076C57001006EB /* TitleBarView.swift */,
 				43F5D56C2B04AD03003D2745 /* ListItemView.swift */,
 				43F5D5712B06AB35003D2745 /* SettingsItemView.swift */,
-				437E918B2B0421F600BDC92C /* ButtonsView.swift */,
+				B37240CA2B0E1467006AC267 /* SecondaryViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,12 +217,15 @@
 				B3D322452B038960002990B0 /* TabViewContainer.swift in Sources */,
 				B3D6D0EE2B04CEBF004B2E1D /* ComponentsData.swift in Sources */,
 				B3D322392B037805002990B0 /* ComponentsView.swift in Sources */,
-				437E918C2B0421F600BDC92C /* ButtonsView.swift in Sources */,
+				B37240C92B0E1462006AC267 /* ButtonsView.swift in Sources */,
+				437E918C2B0421F600BDC92C /* StaticViewInScroll.swift in Sources */,
 				B3D322372B037805002990B0 /* NC1_LibraryUIApp.swift in Sources */,
 				B39B80532B076C57001006EB /* TitleBarView.swift in Sources */,
+				B37240C52B0DFF37006AC267 /* Sheets.swift in Sources */,
 				43F5D5702B06A494003D2745 /* ConfigurationView.swift in Sources */,
 				43F5D5722B06AB35003D2745 /* SettingsItemView.swift in Sources */,
 				B3D6D0F02B04CF5E004B2E1D /* ComponentsModel.swift in Sources */,
+				B37240C72B0E0B2D006AC267 /* DisclosureView.swift in Sources */,
 				43F5D56D2B04AD03003D2745 /* ListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

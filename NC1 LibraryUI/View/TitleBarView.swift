@@ -2,6 +2,8 @@
 
 import SwiftUI
 
+
+
 /// Se encarga de mostrar un texto de título centrado perfectamente, en conjunto con un botón que se mantiene alineado a la derecha. Usbakistan
 struct TitleBarView: View {
     var body: some View {
