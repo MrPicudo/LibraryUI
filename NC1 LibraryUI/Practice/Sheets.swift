@@ -11,6 +11,51 @@ struct Sheets: View {
         NavigationView {
             ZStack {
                 VStack {
+                    
+                    
+                    
+                    Button(){
+                        //
+                    } label: {
+                        Text("Standard Button")
+                    }.controlSize(.regular)
+
+                    Button(){
+                        //
+                    } label: {
+                        Text("Plain Button")
+                    }.buttonStyle(.plain)
+                    .controlSize(.regular)
+
+                    Button(){
+                        //
+                    } label: {
+                        Text("Bordered")
+                    }.buttonStyle(.bordered)
+                    .controlSize(.regular)
+
+                    Button(){
+                        //
+                    } label: {
+                        Text("Prominent Border")
+                    }.buttonStyle(.borderedProminent)
+                    .controlSize(.regular)
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     ScrollView {
                         // Contenido del ScrollView
                         ForEach(0..<50) { index in

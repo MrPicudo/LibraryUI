@@ -51,41 +51,41 @@ struct ButtonsView: View {
                     .padding() // Padding para el VStack
                     
                     VStack(spacing: 13) {
-                        Button(){
+                        Button() {
                             //
                         } label: {
                             Text("Standard Button")
-                        }.controlSize(.regular)
+                        }.controlSize(selectedSize.controlSize)
                         
                         Button(){
                             //
                         } label: {
                             Text("Plain Button")
                         }.buttonStyle(.plain)
-                            .controlSize(.regular)
+                            .controlSize(selectedSize.controlSize)
                         
                         Button(){
                             //
                         } label: {
                             Text("Bordered")
                         }.buttonStyle(.bordered)
-                            .controlSize(.regular)
+                            .controlSize(selectedSize.controlSize)
                         
                         Button(){
                             //
                         } label: {
                             Text("Prominent Border")
                         }.buttonStyle(.borderedProminent)
-                            .controlSize(.regular)
+                            .controlSize(selectedSize.controlSize)
                         
                     }
                 }
                 Spacer()
                 DisclosureGroup(isExpanded: $isExpanded) {
-                    Image(systemName: "photo")
+                    Image("ButtonsCode")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 200, height: 200)
+                        .frame(height: 200)
                 } label: {
                     HStack {
                         Text("{ Code }")
@@ -112,9 +112,24 @@ enum Role: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
-enum Size: String, CaseIterable, Identifiable {
+
+
+enum Size {
+    // Definimos los casos que va a tener el enum
     case large, regular, small, mini
-    var id: Self { self }
+    // Definimos un atributo computable que toma esos casos para definir un controlSize.
+    var controlSize: ControlSize {
+            switch self {
+            case .large:
+                return .large
+            case .regular:
+                return .regular
+            case .small:
+                return .small
+            case .mini:
+                return .mini
+            }
+        }
 }
 
 
